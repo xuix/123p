@@ -1,0 +1,130 @@
+.sidebar {
+  background-color: $color-primary;
+  color: $color-grey-light-1;
+  grid-column: sidebar-start/sidebar-end;
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  font-weight: bolder;
+  text-transform: capitalize;
+
+  // for screens <1000 px move the sidebar to the first row (which was newly defined
+  // in the media query in base.scss
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    // move the hamburger to the RHS and vertically center
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    // move the hamburger to the RHS and vertically center
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    // move the hamburger to the RHS and vertically center
+    flex-direction: column;
+    align-items: center;
+    //background-color: red;
+    position: relative;
+    .nav-btn {
+      position: absolute;
+      left: 85vw;
+      top: 3rem;
+      cursor: pointer;
+    }
+  }
+
+  //use flexbox to center the menu
+  //display: flex;
+  // justify-content: center;
+  .menu {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    @media only screen and (max-width: $bp-large) {
+      flex-direction: row;
+      padding-top: 0;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: row;
+      padding-top: 0;
+    }
+    @media only screen and (max-width: $bp-small) {
+      // display: none;
+      // padding-top: 0;
+      // margin-bottom: 0.5rem;
+    }
+    &-show {
+      display: flex;
+      flex-direction: column;
+    }
+    &-item {
+      cursor: pointer;
+      padding: 0 5px;
+      background-color: $color-primary-dark-1;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      @media only screen and (max-width: $bp-large) {
+        margin-left: 0.5rem;
+      }
+      @media only screen and (max-width: $bp-medium) {
+        margin-left: 0.5rem;
+      }
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: white;
+      }
+    }
+  }
+
+  .nav-btn {
+    border: none;
+    border-radius: 0;
+    background-color: white;
+    height: 2px;
+    width: 4.5rem;
+    // move the button down a bit
+    margin-top: 4rem;
+    display: none;
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      background-color: white;
+      height: 2px;
+      width: 4.5rem;
+    }
+    &::before {
+      transform: translateY(-1.3rem);
+    }
+    &::after {
+      transform: translateY(1.1rem);
+    }
+    @media only screen and (max-width: $bp-large) {
+      margin-top: 0rem;
+      margin-right: 3rem;
+      &::before {
+        transform: translateY(-0.9rem);
+      }
+      &::after {
+        transform: translateY(0.7rem);
+      }
+    }
+    @media only screen and (max-width: $bp-small) {
+      //  display: block;
+    }
+  }
+}

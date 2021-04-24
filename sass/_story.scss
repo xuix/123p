@@ -1,0 +1,46 @@
+.stories {
+  grid-column: center-start/center-end;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  //this divides the grid into 3 equal columns
+  //grid-template-columns: repeat(3, 1fr);
+  // make the columns responsive
+  //don't need to specify rows as it will be an implicit grid
+  gap: 6rem;
+  //change the text display from stretch to move to top
+  justify-content: center;
+  .story {
+    &__img {
+      img {
+        width: 70vw;
+        height: 35vw;
+      }
+    }
+
+    &__content {
+      background-color: $color-grey-light-1;
+      padding: 6rem 8vw;
+      // want to center the contents in the cell. As its only a 1 directional component
+      //use flexbox
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // the button now stretches across the cell. Change default stretch to flex-start
+      align-items: flex-start;
+
+      // to do the same thing in grid......
+      //display:grid;
+      //align-content:center;
+      //justify-items:start;
+    }
+    &__text {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 4rem;
+    }
+  }
+}

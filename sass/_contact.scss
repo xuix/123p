@@ -1,0 +1,45 @@
+.contact {
+  grid-column: full-start/full-end;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+  justify-content: center;
+  padding-top: 5rem;
+  font-size: 2rem;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .input {
+    background-color: $color-grey-light-2;
+    color: white;
+
+    border-radius: 5px;
+    margin: 3px 0;
+    padding: 10px;
+    border: 0px;
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $color-grey-light-1;
+      opacity: 1; /* Firefox */
+    }
+  }
+  .submit {
+    //  color: rgb(74, 73, 78);
+    color: $color-grey-light-1;
+    background-color: $color-primary-dark-1;
+    //  background-color: rgb(152, 195, 251);
+    border-radius: 5px;
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+    border: 0px;
+    width: max-content;
+
+    &:hover {
+      background-color: $color-primary-dark;
+      transform: translateY(3px);
+    }
+  }
+}
